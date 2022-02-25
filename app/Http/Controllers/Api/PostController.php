@@ -15,8 +15,8 @@ class PostController extends Controller
     }
 
     public function show($slug){
-        $posts = Post::where("slug", $slug)->with(["category","tags"])->first();
+        $post = Post::where("slug", $slug)->with(["category","tags"])->first();
 
-        return response()->json($posts);
+        return response()->json($post);
     }
 }
